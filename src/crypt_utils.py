@@ -100,7 +100,7 @@ def get_signature(plain_text, secret_key):
     return cipher.update(plain_text.encode()).hexdigest()
 
 
-def build_url(server, url_prefix, params, country="FR", no_execute=False):
+def build_url(server, url_prefix, params, country="VN", no_execute=False):
     """Build and execute an URL for the API
 
     The built is based on the implementation of an anti-replay attack protection.
@@ -125,7 +125,7 @@ def build_url(server, url_prefix, params, country="FR", no_execute=False):
     """
     fixed_parameters = [
         ("country", country),
-        ("version", 6034),
+        ("version", 9046),
         ("ts", int(time.time() * 1000)),
         ("nonce", randint(-500_000_000, 500_000_000)),
     ]
